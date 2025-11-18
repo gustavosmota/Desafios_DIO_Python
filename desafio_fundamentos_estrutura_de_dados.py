@@ -21,7 +21,7 @@ def depositar(saldo, valor, extrato, /):
             extrato += f"Depósito:\tR$ {valor:.2f}\n"
             print("\n=== Depósito realizadocom sucesso! ===")
     else:
-            print("\n@@@ Operação falhou! O valor informado é inválido. @@@")
+            print("\n Operação falhou! O valor informado é inválido. ")
     
     return saldo, extrato
 
@@ -32,11 +32,11 @@ def sacar(*, saldo, valor, extrato, numero_saques, limite_saques, cheque_especia
     excedeu_saques = numero_saques >= limite_saques
     
     if excedeu_saldo:
-        print("\n@@@ Operação falhou! Você excedeu o limite do cheque especial. @@@")
+        print("\n Operação falhou! Você excedeu o limite do cheque especial. ")
     
           
     elif excedeu_saques:
-        print("\n@@@ Operação falhou! Número máximo de saques excedido.@@@")
+        print("\n Operação falhou! Número máximo de saques excedido.")
     
     elif valor > 0:
         saldo -= valor
@@ -45,7 +45,7 @@ def sacar(*, saldo, valor, extrato, numero_saques, limite_saques, cheque_especia
         print("\n=== Saque realizado com sucesso! ===")
     
     else:
-        print("\n@@@ Operação falhou! O valor informado é inválido.@@@")
+        print("\n Operação falhou! O valor informado é inválido.")
     
     return saldo, extrato, numero_saques
 
@@ -63,7 +63,7 @@ def criar_usuario(usuarios):
      usuario = filtrar_usuario(cpf, usuarios)
 
      if usuario:
-          print("\n@@@ Já existe usuário com esse CPF! @@@")
+          print("\n Já existe usuário com esse CPF! ")
           return
      
      nome = input("Informe o nome completo: ")
@@ -87,7 +87,7 @@ def criar_conta(agencia, numero_conta, usuarios):
           print("\n=== Conta criada com sucesso! ===")
           return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
      
-     print("\n@@@ Usuário não encontrado, fluxo de criação de conta encerrado! @@@")
+     print("\n Usuário não encontrado, fluxo de criação de conta encerrado! ")
      return None
      
 
